@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<div class="col-md-5">
+<p>
+  <strong>Name:</strong>
+  <%= @store.name %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @store.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @store.longitude %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @store.address %>
+</p>
+
+<%= link_to 'Edit', edit_store_path(@store) %> |
+<%= link_to 'Back', stores_path %>
+</div>
+<div class="col-md-7">
+  <h1>Listing Nearby Stores</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Address</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @near_stores.each do |near_store| %>
+        <tr>
+          <td><%= near_store.name %></td>
+          <td><%= near_store.latitude %></td>
+          <td><%= near_store.longitude %></td>
+          <td><%= near_store.address %></td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
